@@ -1,3 +1,4 @@
+//  function creation for clean js
 function getFirstInput(inputId,value,memorysize){
     const inputValue = document.getElementById(inputId);
     inputValue.value=value;
@@ -30,6 +31,7 @@ document.getElementById("Aug-25-delivery-charge").addEventListener("click",funct
 document.getElementById("Aug-21-delivery-charge").addEventListener("click",function(){
     getFirstInput("Aug-21-delivery-charge" ,20,"delivery-charge");
 })
+// total of price update
  function getValue(product){
      const price = document.getElementById(product);
     const priceAmount = price.innerText;
@@ -48,7 +50,7 @@ getTotalPrice()
     document.getElementById("total-price").innerText = totalPrice;
     return totalPrice;
  }
-
+// apply promocode
  document.getElementById("button-apply").addEventListener("click",function(){
 
      const totalProductPrice =getTotalPrice();
@@ -56,10 +58,10 @@ getTotalPrice()
      const inputCode = inputValue.value;
    
      if(inputCode == "stevekaku"){
-      
          const discount = totalProductPrice *(20/100);
          const total = totalProductPrice - discount;
          document.getElementById("final-total").innerText =  total;
-         inputValue.value = "";
+         
      }
+     inputValue.value = "";
  })
