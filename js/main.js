@@ -52,7 +52,7 @@ document.getElementById("final-total").innerText = totalPrice;
 return totalPrice;
  }
 
-//function creation for promo code
+//eventListener creation for promo code
 document.getElementById("button-apply").addEventListener("click",function(){
     const priceProduct = calculateTotal();
   const promoCode = document.getElementById("promo-code");
