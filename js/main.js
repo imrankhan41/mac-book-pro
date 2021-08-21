@@ -41,21 +41,26 @@ document.getElementById("Aug-21-delivery-charge").addEventListener("click",funct
  const extraMemoryPrice = getValue("memory");
 const  ssdPriceValue = getValue("memory-ssd");
 const deliveryValue = getValue("delivery-charge");
- console.log(bestPrice)
- console.log(extraMemoryPrice)
-console.log(ssdPriceValue)
-console.log(deliveryValue)
-const totalPrice = bestPrice  + extraMemoryPrice + ssdPriceValue + deliveryValue;
-document.getElementById("total-price").innerText = totalPrice;
+getTotalPrice()
+ }
+ function getTotalPrice(price){
+    const totalPrice = bestPrice  + extraMemoryPrice + ssdPriceValue + deliveryValue;
+    document.getElementById("total-price").innerText = totalPrice;
+    return totalPrice;
  }
 
  document.getElementById("button-apply").addEventListener("click",function(){
+
+    const totalProductPrice =getTotalPrice();
+    document.getElementById("final-total").innerText = totalProductPrice
      const inputValue = document.getElementById("cupon code");
      const inputCode = inputValue.value;
+   
      if(inputCode == "stevekaku"){
-         const totalPrice = document.getElementById("total-price").innerText;
-         const discount = totalPrice *(20/100);
-         const total = totalPrice - discount;
-         document.getElementById("final-total").innerText = total;
+      
+         const discount = totalProductPrice *(20/100);
+         const total = totalProductPrice - discount;
+         document.getElementById("final-total").innerText =  total;
+         inputValue.value = "";
      }
  })
