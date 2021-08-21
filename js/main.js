@@ -51,8 +51,7 @@ getTotalPrice()
 
  document.getElementById("button-apply").addEventListener("click",function(){
 
-    const totalProductPrice =getTotalPrice();
-    document.getElementById("final-total").innerText = totalProductPrice
+     const totalProductPrice =getTotalPrice();
      const inputValue = document.getElementById("cupon code");
      const inputCode = inputValue.value;
    
