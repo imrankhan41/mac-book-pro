@@ -56,7 +56,7 @@ return totalPrice;
 document.getElementById("button-apply").addEventListener("click",function(){
     const priceProduct = calculateTotal();
   const promoCode = document.getElementById("promo-code");
-  const promoCodeValue = promoCode.value;
+  const promoCodeValue = promoCode.value ;
 
   
   if(promoCodeValue == "stevekaku"){
